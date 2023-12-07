@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-ngx-slider-button',
+  selector: 'ngx-slider-button',
   template: `
     <p>
       ngx-slider-button works!
