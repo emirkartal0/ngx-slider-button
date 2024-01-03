@@ -1,0 +1,129 @@
+:root {
+    --clr-tr: #ffffff;
+    --clr-th: #0000ff;
+}
+
+.container {
+    position: relative;
+}
+
+.slider {
+    width: 100%;
+    appearance: none;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.slider-label {
+    position: absolute;
+    pointer-events: none;
+    top: 0.25rem;
+}
+
+.slider-placeholder {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0px;
+    top: 0.25rem;
+    color: rgb(0 0 0 1);
+    pointer-events: none;
+}
+
+.slider:active::-webkit-slider-thumb {
+    pointer-events: auto;
+    appearance: none;
+    transform: scale(1.2);
+    cursor: -webkit-grabbing;
+}
+
+.slider:active::-moz-range-thumb {
+    pointer-events: auto;
+    border: 0;
+    transform: scale(1.2);
+    cursor: -moz-grabbing;
+}
+
+.slider:active::-ms-thumb {
+    pointer-events: auto;
+    transform: scale(1.2);
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+}
+
+.slider:focus {
+    outline: none;
+}
+
+.slider::-webkit-slider-runnable-track {
+    height: 1.5rem;
+    padding: 0.25rem;
+    box-sizing: content-box;
+    border-radius: 1rem;
+    background-color: var(--clr-tr);
+}
+
+.slider::-moz-range-track {
+    height: 1.5rem;
+    padding: 0.25rem;
+    box-sizing: content-box;
+    border-radius: 1rem;
+    background-color: var(--clr-tr);
+}
+
+.slider::-ms-track {
+    border: 0;
+    height: 1.5rem;
+    padding: 0.25rem;
+    box-sizing: content-box;
+    border-radius: 1rem;
+    background-color: var(--clr-tr);
+    color: var(--clr-tr);
+}
+
+.slider::-moz-focus-outer {
+    border: 0;
+}
+
+.slider::-webkit-slider-thumb {
+    pointer-events: auto;
+    appearance: none;
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--clr-th);
+    transform-origin: 50% 50%;
+    transform: scale(1);
+    transition: transform ease-out 200ms;
+    cursor: -webkit-grab;
+}
+
+.slider::-moz-range-thumb {
+    pointer-events: auto;
+    appearance: none;
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--clr-th);
+    transform-origin: 50% 50%;
+    transform: scale(1);
+    transition: transform ease-out 200ms;
+    cursor: -moz-grab;
+}
+
+.slider::-ms-thumb {
+    pointer-events: auto;
+    appearance: none;
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--clr-th);
+    transform-origin: 50% 50%;
+    transform: scale(1);
+    transition: transform ease-out 200ms;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+}

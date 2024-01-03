@@ -1,1 +1,29 @@
-<ngx-slider-button></ngx-slider-button>
+<div class="container">
+    <input
+        value="0"
+        [(ngModel)]="currentValue"
+        id="slider"
+        class="slider"
+        type="range"
+        min="0"
+        placeholder="deneme"
+        [max]="_maxValue"
+        (mouseup)="confirmEndHandler()"
+    />
+    <label
+        [style.left]="
+            'calc(' + calcThumbLocation + '% + 0.7rem - ' + 1.9 * calcRatio + 'rem)'
+        "
+        class="slider-label"
+        id="icon"
+    >
+        {{ src }}
+    </label>
+    <span
+        class="slider-placeholder"
+        [style.opacity]="abs(1 - calcRatio * 2)"
+        #placeholderEl
+    >
+        {{ calcRatio < 0.5 ? placeholder : secondaryPlaceholder }}
+    </span>
+</div>
