@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   AfterViewInit,
   Component,
@@ -10,14 +11,13 @@ import {
   ViewChild,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { interval, take } from 'rxjs';
 
 @Component({
   selector: 'ngx-slider-button',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   template: `
-    <div class="relative">
+    <div class="container">
       <input
         [disabled]="checkDisable"
         value="0"
@@ -59,6 +59,22 @@ import { interval, take } from 'rxjs';
 
 .container {
 	position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 0.25rem;
+  pointer-events: none;
+}
+
+.text {
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  pointer-events: none;
 }
 
 .slider {
@@ -227,16 +243,18 @@ export class NgxSliderButtonComponent implements OnChanges, AfterViewInit {
   }
 
   confirmEndHandler() {
-    if (this.currentValue === this._maxValue) {
-      this.successEvent.emit();
-    }
-    interval(10)
-      .pipe(take(Math.ceil(this.currentValue / 40)))
-      .subscribe((_count) => {
-        this.currentValue = this.currentValue - 40;
-        if (this.currentValue < 0) {
-          this.currentValue = 0;
-        }
-      });
-  }
+		if (this.currentValue === this._maxValue) {
+			this.successEvent.emit();
+		}
+		requestAnimationFrame(this.moveHandleBack.bind(this));
+	}
+
+	moveHandleBack() {
+    this.currentValue = this.currentValue - 40;
+		if (this.currentValue < 0.5) {
+			this.currentValue = 0;
+		} else {
+			requestAnimationFrame(this.moveHandleBack.bind(this));
+		}
+	}
 }
