@@ -1,24 +1,56 @@
-# NgxSliderButton
+# ngx-slider-button
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0.
+An Angular component that provides a "Slide to Confirm" functionality, typically used for actions that require user verification.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project ngx-slider-button` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-slider-button`.
-> Note: Don't forget to add `--project ngx-slider-button` or else it will be added to the default project in your `angular.json` file. 
+Install the package using npm:
 
-## Build
+```bash
+npm i ngx-slider-button
+```
+### Inputs
 
-Run `ng build ngx-slider-button` to build the project. The build artifacts will be stored in the `dist/` directory.
+| Input                      | Type    | Description                                              | Default Value     |
+|----------------------------|---------|----------------------------------------------------------|-------------------|
+| `thumbColor`               | string  | Specifies the color of the thumb in hex format.          | `"#3b82f6"`       |
+| `trackColor`               | string  | Specifies the color of the track in hex format.          | `"#fff"`          |
+| `placeholderText`          | string  | The text displayed as the placeholder initially.         | `"Slide to confirm"` |
+| `secondaryPlaceholderText` | string  | The text displayed as the placeholder while sliding.     | `"Confirming"`    |
+| `placeholderColor`         | string  | The color of the placeholder text.                       | `"#fff"`          |
+| `src`                      | string  | The character or symbol displayed on the thumb.          | `">"`             |
+| `checkDisable`             | boolean | Controls the disabled state of the component.            | `false`           |
 
-## Publishing
+### Output
+```js
+@Output() successEvent
+```
+Event emitted when the sliding action is successfully completed.
 
-After building your library with `ng build ngx-slider-button`, go to the dist folder `cd dist/ngx-slider-button` and run `npm publish`.
+## Example
 
-## Running unit tests
+Here is a complete example of how to use the `slide-to-confirm` component in an Angular application:
 
-Run `ng test ngx-slider-button` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```typescript
+import { Component } from '@angular/core';
+import { SlideToConfirmComponent } from 'your-package-name';
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [SlideToConfirmComponent],
+  template: `
+    <slide-to-confirm
+      [placeholderText]="'Swipe to unlock'"
+      [secondaryPlaceholderText]="'Unlocking...'"
+      (successEvent)="onSuccess()">
+    </slide-to-confirm>
+  `,
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  onSuccess() {
+    console.log('Slide to confirm completed!');
+  }
+}
+```
