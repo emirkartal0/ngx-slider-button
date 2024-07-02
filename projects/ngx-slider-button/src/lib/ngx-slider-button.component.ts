@@ -37,13 +37,13 @@ import { FormsModule } from '@angular/forms';
           1.9 * calcRatio +
           'rem)'
         "
-        class="absolute pointer-events-none top-1"
+        class="icon"
         id="icon"
       >
         {{ src }}
       </label>
       <span
-        class="w-full text-center absolute left-0 top-1 text-white pointer-events-none"
+        class="text"
         [style.opacity]="abs(1 - calcRatio * 2)"
         >{{
           calcRatio < 0.5 ? placeholderText : secondaryPlaceholderText
