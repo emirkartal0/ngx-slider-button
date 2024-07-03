@@ -44,6 +44,7 @@ import { FormsModule } from '@angular/forms';
       </label>
       <span
         class="text"
+        [style.color]="placeholderColor"
         [style.opacity]="abs(1 - calcRatio * 2)"
         >{{
           calcRatio < 0.5 ? placeholderText : secondaryPlaceholderText
@@ -228,8 +229,8 @@ export class NgxSliderButtonComponent implements OnChanges, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.sliderEl!.nativeElement.style.setProperty(`--clr-th`, this.thumbColor);
-    this.sliderEl!.nativeElement.style.setProperty(`--clr-tr`, this.trackColor);
+    this.sliderEl?.nativeElement.style.setProperty(`--clr-th`, this.thumbColor);
+    this.sliderEl?.nativeElement.style.setProperty(`--clr-tr`, this.trackColor);
   }
 
   get calcThumbLocation(): number {
