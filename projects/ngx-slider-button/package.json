@@ -1,6 +1,7 @@
 {
   "name": "ngx-slider-button",
   "version": "1.0.0",
+  "keywords": ["ngx-slider","angular","slide-button","slide-to-cofirm", "slide-to-verify", "slide-to-unlock", "swipe-to-cofirm", "swipe-to-verify", "swipe-to-unlock"],
   "peerDependencies": {
     "@angular/common": "^18.0.0",
     "@angular/core": "^18.0.0"
