@@ -23,28 +23,28 @@ npm i ngx-slider-button
 
 ### Output
 ```js
-@Output() successEvent
+successEvent()
 ```
 Event emitted when the sliding action is successfully completed.
 
 ## Example
 
-Here is a complete example of how to use the `slide-to-confirm` component in an Angular application:
+Here is a complete example of how to use the `ngx-slider-button` component in an Angular application:
 
 ```typescript
 import { Component } from '@angular/core';
-import { SlideToConfirmComponent } from 'your-package-name';
+import { NgxSliderButtonComponent } from 'ngx-slider-button'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [SlideToConfirmComponent],
+  imports: [NgxSliderButtonComponent],
   template: `
-    <slide-to-confirm
+    <ngx-slider-button
       [placeholderText]="'Swipe to unlock'"
       [secondaryPlaceholderText]="'Unlocking...'"
       (successEvent)="onSuccess()">
-    </slide-to-confirm>
+    </ngx-slider-button>
   `,
   styleUrls: ['./app.component.css']
 })
