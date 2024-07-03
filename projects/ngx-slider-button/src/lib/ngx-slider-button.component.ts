@@ -33,7 +33,7 @@ import { FormsModule } from '@angular/forms';
         [style.left]="
           'calc(' +
           calcThumbLocation +
-          '% + 0.7rem - ' +
+          '% + 0.80rem - ' +
           1.9 * calcRatio +
           'rem)'
         "
@@ -55,6 +55,7 @@ import { FormsModule } from '@angular/forms';
 :root {
 	--clr-tr: #ffffff;
 	--clr-th: #0000ff;
+  font-size: 16px;
 }
 
 .container {
@@ -63,17 +64,17 @@ import { FormsModule } from '@angular/forms';
 
 .icon {
   position: absolute;
-  top: 0.25rem;
+  top: 0.6rem;
   pointer-events: none;
 }
 
 .text {
   position: absolute;
   left: 0;
-  top: 0.25rem;
+  top: 0.6rem;
   width: 100%;
   text-align: center;
-  color: #ffffff;
+  color: #000;
   pointer-events: none;
 }
 
@@ -205,7 +206,7 @@ export class NgxSliderButtonComponent implements OnChanges, AfterViewInit {
   @Input() trackColor: string = '#fff';
   @Input() placeholderText: string = 'Slide to confirm';
   @Input() secondaryPlaceholderText: string = 'Confirming';
-  @Input() placeholderColor: string = '#fff';
+  @Input() placeholderColor: string = '#000';
   @Input() src: string = '>';
   @Input() checkDisable: boolean = false;
 
