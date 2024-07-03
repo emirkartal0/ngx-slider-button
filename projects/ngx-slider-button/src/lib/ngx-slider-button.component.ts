@@ -66,6 +66,7 @@ import { FormsModule } from '@angular/forms';
   position: absolute;
   top: 0.6rem;
   pointer-events: none;
+  font-weight: 700;
 }
 
 .text {
